@@ -1,4 +1,7 @@
+
+
 const url = 'https://restcountries.com/v3.1/all';
+
 // fetch (url)
 // .then(response => response.json())
 // .then(data => {
@@ -15,8 +18,17 @@ const getCountries=async function(){
     return json
 }
 
-
+const country = document.querySelector('.country')
 getCountries()
 .then((data)=>{
+    var list = ''
     for(i = 0; i < data.length; i++){
-        console.log(data[i].name.common)}}) 
+        // console.log(data[i].name.common)
+        list += `<li>${data[i].name.common}</li>`
+        console.log(country)
+        }
+    country.innerHTML=list;})
+        
+// var newEl = document.createElement('li')
+// var newText = document.createTextNode(getCountries())
+// newEl.appendChild(newText)
